@@ -1,1 +1,1 @@
-# smBook project
+# smBook SE project.
