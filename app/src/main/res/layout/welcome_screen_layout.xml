@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical">
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/armenian_language_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/armenian"
+        android:layout_weight="1.5"/>
+    <Button
+        android:id="@+id/russian_language_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/russian"
+        android:layout_weight="1.5"/>
+    <Button
+        android:id="@+id/english_language_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/english"
+        android:layout_weight="1.5"/>
+
+</LinearLayout>
