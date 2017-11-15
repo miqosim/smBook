@@ -1,0 +1,61 @@
+package com.softwareengineering.smbook.activities;
+
+/**
+ * Created by Irina on 11/15/2017.
+ */
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;;import com.softwareengineering.smbook.R;
+
+public class RVFragment extends Fragment {
+
+    public RVFragment() {
+        // Required empty public constructor
+    }
+
+    public static RVFragment newInstance(int someInt) {
+        RVFragment rvFragment = new RVFragment();
+
+        Bundle args = new Bundle();
+        args.putInt("someInt", someInt);
+        rvFragment.setArguments(args);
+
+        return rvFragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.rv_fragment, container, false);
+
+        RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
+        rv.setHasFixedSize(true);
+        int tab = getArguments().getInt("someInt", 0);
+        if (tab == 0) {
+            CinemaAdapter adapter = new CinemaAdapter(new String[]{"test one", "test two", "test three", "test four", "test five" , "test six" , "test seven"});
+            rv.setAdapter(adapter);
+        } else if (tab == 1) {
+            MovieAdapter adapter = new MovieAdapter(new String[]{"test one", "test two", "test three", "test four", "test five" , "test six" , "test seven"});
+            rv.setAdapter(adapter);
+        }
+
+
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        rv.setLayoutManager(llm);
+
+        return rootView;
+    }
+
+}

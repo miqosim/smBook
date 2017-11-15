@@ -21,11 +21,11 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                Movie_page_fragment tab1 = new Movie_page_fragment();
-                return tab1;
+                RVFragment moviesTab = RVFragment.newInstance(0);
+                return moviesTab;
             case 1:
-                Cinema_page_fragment tab2 = new Cinema_page_fragment();
-                return tab2;
+                RVFragment cinemasTab = RVFragment.newInstance(1);
+                return cinemasTab;
             default:
                 return null;
         }
