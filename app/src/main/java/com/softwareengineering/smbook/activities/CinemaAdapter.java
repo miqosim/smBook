@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.softwareengineering.smbook.R;
@@ -23,11 +24,16 @@ public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.MyViewHold
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         public CardView mCardView;
         public TextView mCinemaNameTextView;
+        public ImageView cinema_main_image;
+        public TextView cinema_address_text_view;
+
         public MyViewHolder(View v) {
             super(v);
 
             mCardView = (CardView) v.findViewById(R.id.cinema_card_view);
             mCinemaNameTextView = (TextView) v.findViewById(R.id.cinema_name_text_view);
+            cinema_main_image = (ImageView)  v.findViewById(R.id.cinema_main_image);
+            cinema_address_text_view = (TextView) v.findViewById(R.id.cinema_address_text_view);
         }
     }
 
@@ -51,6 +57,8 @@ public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.MyViewHold
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.mCinemaNameTextView.setText(mDataset[position]);
+        holder.cinema_address_text_view.setText(mDataset[position]);
+        holder.cinema_main_image.setImageDrawable(App.getContext().getResources().getDrawable(R.drawable.ic_launcher));
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

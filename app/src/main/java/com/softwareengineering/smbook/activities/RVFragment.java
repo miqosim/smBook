@@ -44,10 +44,10 @@ public class RVFragment extends Fragment {
         rv.setHasFixedSize(true);
         int tab = getArguments().getInt("someInt", 0);
         if (tab == 0) {
-            CinemaAdapter adapter = new CinemaAdapter(new String[]{"test one", "test two", "test three", "test four", "test five" , "test six" , "test seven"});
+            MovieAdapter adapter = new MovieAdapter(new String[]{"test one", "test two", "test three"});
             rv.setAdapter(adapter);
         } else if (tab == 1) {
-            MovieAdapter adapter = new MovieAdapter(new String[]{"test one", "test two", "test three", "test four", "test five" , "test six" , "test seven"});
+            CinemaAdapter adapter = new CinemaAdapter(new String[]{"test one", "test two", "test three"});
             rv.setAdapter(adapter);
         }
 
