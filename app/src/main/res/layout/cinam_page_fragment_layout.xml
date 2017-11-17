@@ -5,56 +5,82 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cinema_card_view"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="62dp"
-        card_view:cardCornerRadius="4dp"
-        card_view:elevation="14dp">
+<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cinema_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    card_view:cardCornerRadius="4dp"
+    card_view:elevation="14dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-        <ImageView
-            android:id="@+id/cinema_main_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <TextView
-            android:id="@+id/cinema_name_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"/>
-        <TextView
-            android:id="@+id/cinema_address_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_alignParentBottom="true"/>
-    </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="3">
-        <TextView
-            android:id="@+id/cinema_about_text_view"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/about_text"
-            android:textSize="20sp"
-            android:gravity="center"
-            tools:ignore="NestedWeights" />
-        <TextView
-            android:id="@+id/cinema_schedule_text_view"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:id="@+id/cinema_main_image"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                />
+            <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+            <TextView
+                android:id="@+id/cinema_name_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:id="@+id/cinema_address_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                 />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/schedule"
-            android:textSize="20sp"
-            android:gravity="center"/>
-    </LinearLayout>
+            android:layout_weight="3"
+            android:orientation="horizontal">
 
-    </android.support.v7.widget.CardView>
+            <TextView
+                android:id="@+id/cinema_about_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/about_text"
+                android:textSize="20sp"
+                tools:ignore="NestedWeights" />
+
+            <TextView
+                android:id="@+id/cinema_schedule_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/schedule"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
 </LinearLayout>
+</android.support.v7.widget.CardView>
+    </LinearLayout>
