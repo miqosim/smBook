@@ -1,4 +1,4 @@
-package com.softwareengineering.smbook.activities;
+package com.softwareengineering.smbook.adapters;
 
 /**
  * Created by Irina on 11/15/2017.
@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.softwareengineering.smbook.R;
+import com.softwareengineering.smbook.activities.App;
 
 public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.MyViewHolder> {
     private String[] mDataset;

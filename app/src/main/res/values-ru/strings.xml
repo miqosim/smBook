@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">СМБУК</string>
+    <string name="action_settings">Настройки</string>
+    <string name="about_text">Описание</string>
+    <string name="reviews">Отзывы</string>
+    <string name="schedule">Расписание</string>
+    <string name="armenian">Армянский</string>
+    <string name="russian">Русский</string>
+    <string name="english">Английский</string>
+</resources>

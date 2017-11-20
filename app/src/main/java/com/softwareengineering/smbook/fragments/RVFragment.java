@@ -1,4 +1,4 @@
-package com.softwareengineering.smbook.activities;
+package com.softwareengineering.smbook.fragments;
 
 /**
  * Created by Irina on 11/15/2017.
@@ -11,6 +11,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;;import com.softwareengineering.smbook.R;
+import com.softwareengineering.smbook.adapters.CinemaAdapter;
+import com.softwareengineering.smbook.adapters.MovieAdapter;
 
 public class RVFragment extends Fragment {
 

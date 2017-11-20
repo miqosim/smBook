@@ -1,4 +1,4 @@
-package com.softwareengineering.smbook.activities;
+package com.softwareengineering.smbook.adapters;
 
 /**
  * Created by Irina on 11/15/2017.
@@ -12,10 +12,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.softwareengineering.smbook.R;
+import com.softwareengineering.smbook.activities.App;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
     private String[] mDataset;

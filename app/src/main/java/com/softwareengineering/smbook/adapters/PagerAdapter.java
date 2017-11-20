@@ -1,4 +1,4 @@
-package com.softwareengineering.smbook.activities;
+package com.softwareengineering.smbook.adapters;
 
 /**
  * Created by Irina on 11/7/2017.
@@ -7,6 +7,8 @@ package com.softwareengineering.smbook.activities;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import com.softwareengineering.smbook.fragments.RVFragment;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;

@@ -1,4 +1,4 @@
-package com.softwareengineering.smbook.activities;
+package com.softwareengineering.smbook.fragments;
 
 /**
  * Created by Irina on 11/7/2017.
@@ -12,10 +12,10 @@ import android.view.ViewGroup;
 
 import com.softwareengineering.smbook.R;
 
-public class Movie_page_fragment extends Fragment {
+public class Cinema_page_fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.movie_page_fragment_layout, container, false);
+        return inflater.inflate(R.layout.cinam_page_fragment_layout, container, false);
     }
 }

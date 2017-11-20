@@ -1,4 +1,4 @@
-package com.softwareengineering.smbook.activities;
+package com.softwareengineering.smbook.fragments;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.softwareengineering.smbook.R;
+import com.softwareengineering.smbook.adapters.PagerAdapter;
 
 /**
  * Created by Irina on 11/14/2017.
