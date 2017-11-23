@@ -16,17 +16,22 @@ import android.view.ViewGroup;
 import com.softwareengineering.smbook.R;
 import com.softwareengineering.smbook.adapters.PagerAdapter;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by Irina on 11/14/2017.
  */
 
 public class MyFragment extends Fragment {
+    ViewPager viewPager;
+    int pos;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragmentlayout, container, false);
+        ButterKnife.bind(this, view);
 
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
@@ -36,7 +41,7 @@ public class MyFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText("CINEMAS"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final ViewPager viewPager = (ViewPager) view.findViewById(R.id.pager);
+        viewPager = (ViewPager) view.findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter
                 (getFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
@@ -44,7 +49,8 @@ public class MyFragment extends Fragment {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+                pos = tab.getPosition();
+                viewPager.setCurrentItem(pos);
             }
 
             @Override
@@ -74,5 +80,16 @@ public class MyFragment extends Fragment {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+
+        if(viewPager !=null)
+
+            viewPager.setCurrentItem(pos);
+
     }
 }

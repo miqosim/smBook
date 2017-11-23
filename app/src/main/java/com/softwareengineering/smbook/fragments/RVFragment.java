@@ -14,6 +14,8 @@ import android.view.ViewGroup;;import com.softwareengineering.smbook.R;
 import com.softwareengineering.smbook.adapters.CinemaAdapter;
 import com.softwareengineering.smbook.adapters.MovieAdapter;
 
+import butterknife.ButterKnife;
+
 public class RVFragment extends Fragment {
 
     public RVFragment() {
@@ -41,6 +43,7 @@ public class RVFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.rv_fragment, container, false);
+        ButterKnife.bind(this, rootView);
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
         rv.setHasFixedSize(true);
@@ -49,7 +52,7 @@ public class RVFragment extends Fragment {
             MovieAdapter adapter = new MovieAdapter(new String[]{"test one", "test two", "test three"});
             rv.setAdapter(adapter);
         } else if (tab == 1) {
-            CinemaAdapter adapter = new CinemaAdapter(new String[]{"test one", "test two", "test three"});
+            CinemaAdapter adapter = new CinemaAdapter(getActivity(),new String[]{"test one", "test two", "test three"});
             rv.setAdapter(adapter);
         }
 
