@@ -4,6 +4,10 @@ package com.softwareengineering.smbook.adapters;
  * Created by Irina on 11/15/2017.
  */
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageButton;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.CardView;
@@ -16,9 +20,14 @@ import android.widget.TextView;
 
 import com.softwareengineering.smbook.R;
 import com.softwareengineering.smbook.activities.App;
+import com.softwareengineering.smbook.fragments.CinemaAboutFragment;
+import com.softwareengineering.smbook.fragments.MovieAboutFragment;
+import com.softwareengineering.smbook.fragments.MovieReviewsFragment;
+import com.softwareengineering.smbook.fragments.MovieScheduleFragment;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
     private String[] mDataset;
+    private Context mContext;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -32,6 +41,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
         public TextView movie_about_text_view;
         public TextView movie_reviews_text_view;
         public TextView movie_schedule_text_view;
+
 
 
         public MyViewHolder(View v) {
@@ -49,8 +59,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MovieAdapter(String[] myDataset) {
+    public MovieAdapter(Context context, String[] myDataset) {
         mDataset = myDataset;
+        mContext=context;
     }
 
     // Create new views (invoked by the layout manager)
@@ -68,13 +79,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         //here I have some default values just to see how it will look like
-        holder.mMovieTitleTextView.setText(mDataset[position]);
-        holder.movie_poster_image.setImageDrawable(App.getContext().getResources().getDrawable(R.drawable.ic_launcher));
-        holder.movie_rating_text_view.setText(mDataset[position]);
-        holder.movie_share_image_button.setImageDrawable(App.getContext().getResources().getDrawable(R.drawable.ic_launcher));
-        holder.movie_about_text_view.setText(mDataset[position]);
-        holder.movie_reviews_text_view.setText(mDataset[position]);
-        holder.movie_schedule_text_view.setText(mDataset[position]);
+        holder.movie_poster_image.setImageDrawable(App.getContext().getResources().getDrawable(R.drawable.poster_test));
+        holder.movie_share_image_button.setImageDrawable(App.getContext().getResources().getDrawable(R.drawable.ic_share_black_24dp));
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +88,36 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
                 Log.d("CardView", "CardView Clicked: " + currentValue);
             }
         });
+        holder.movie_share_image_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "Here is the share content body";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                mContext.startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            }
+        });
+        holder.movie_about_text_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieAboutFragment()).addToBackStack(null).commit();
+            }
+        });
+        holder.movie_reviews_text_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieReviewsFragment()).addToBackStack(null).commit();
+            }
+        });
+        holder.movie_schedule_text_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieScheduleFragment()).addToBackStack(null).commit();
+            }
+        });
+
     }
 
     @Override

@@ -95,6 +95,7 @@ public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.MyViewHold
             public void onClick(View view) {
                 ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CinemaScheduleFragment()).addToBackStack(null).commit();
                 Toast.makeText(App.getContext(), "Cinema Schedule", Toast.LENGTH_LONG).show();
+
             }
         });
     }

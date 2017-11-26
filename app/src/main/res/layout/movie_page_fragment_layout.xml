@@ -35,7 +35,8 @@
         android:layout_height="70dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:text="Movie Rating"/>
 
     <android.support.v7.widget.AppCompatImageButton
         android:id="@+id/movie_share_image_button"
@@ -43,7 +44,8 @@
         android:layout_height="70dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:actionProviderClass="android.widget.ShareActionProvider"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +57,8 @@
             android:id="@+id/movie_title_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="Movie Title"/>
 
         <LinearLayout
             android:layout_width="match_parent"

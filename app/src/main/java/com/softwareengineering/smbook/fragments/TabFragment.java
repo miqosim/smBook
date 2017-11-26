@@ -1,6 +1,7 @@
 package com.softwareengineering.smbook.fragments;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -22,7 +23,7 @@ import butterknife.ButterKnife;
  * Created by Irina on 11/14/2017.
  */
 
-public class MyFragment extends Fragment {
+public class TabFragment extends Fragment {
     ViewPager viewPager;
     int pos;
 
@@ -30,7 +31,7 @@ public class MyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragmentlayout, container, false);
+       View view = inflater.inflate(R.layout.tab_fragment_layout, container, false);
         ButterKnife.bind(this, view);
 
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
@@ -51,6 +52,7 @@ public class MyFragment extends Fragment {
             public void onTabSelected(TabLayout.Tab tab) {
                 pos = tab.getPosition();
                 viewPager.setCurrentItem(pos);
+                PreferenceManager.getDefaultSharedPreferences(getContext()).edit().putInt("Position", pos).apply();
             }
 
             @Override
@@ -60,7 +62,6 @@ public class MyFragment extends Fragment {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
             }
         });
         return view;
@@ -88,8 +89,7 @@ public class MyFragment extends Fragment {
 
 
         if(viewPager !=null)
-
-            viewPager.setCurrentItem(pos);
+            viewPager.setCurrentItem(PreferenceManager.getDefaultSharedPreferences(getContext()).getInt("Position", 0));
 
     }
 }

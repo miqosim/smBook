@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.softwareengineering.smbook.R;
-import com.softwareengineering.smbook.fragments.MyFragment;
+import com.softwareengineering.smbook.fragments.TabFragment;
 import com.softwareengineering.smbook.fragments.WelcomeScreenFragment;
 
 import butterknife.ButterKnife;
@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
 //
-//            MyFragment myf = new MyFragment();
+//            TabFragment myf = new TabFragment();
 //
 //            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 //            transaction.add(R.id.frame, myf);
 //            transaction.commit();
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MyFragment()).addToBackStack(null).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TabFragment()).addToBackStack(null).commit();
         }
     }
 
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         super.onBackPressed();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MyFragment()).addToBackStack(null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TabFragment()).addToBackStack(null).commit();
     }
 
 }
