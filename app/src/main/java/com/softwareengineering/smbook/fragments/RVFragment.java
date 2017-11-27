@@ -18,6 +18,10 @@ import butterknife.ButterKnife;
 
 public class RVFragment extends Fragment {
 
+    public  static  final String RVFRAGMENT_BACKSTACK_TAG = "RVfragment_backstack_tag";
+
+    private View rootView;
+
     public RVFragment() {
         // Required empty public constructor
     }
@@ -42,7 +46,9 @@ public class RVFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.rv_fragment, container, false);
+        if (rootView == null) {
+            rootView = inflater.inflate(R.layout.rv_fragment, container, false);
+        }
         ButterKnife.bind(this, rootView);
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
@@ -63,4 +69,8 @@ public class RVFragment extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 }

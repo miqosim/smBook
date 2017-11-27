@@ -1,5 +1,7 @@
 package com.softwareengineering.smbook.activities;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,7 +40,13 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         super.onBackPressed();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TabFragment()).addToBackStack(null).commit();
+        int index = getSupportFragmentManager().getBackStackEntryCount() - 1;
+        FragmentManager.BackStackEntry backEntry = (FragmentManager.BackStackEntry) getSupportFragmentManager().getBackStackEntryAt(index);
+        String tag = backEntry.getName();
+//        Fragment fragment = getFragmentManager().findFragmentByTag(tag);
+        if(tag.equals(TabFragment.TABFRAGMENT_BACKSTACK_TAG)) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TabFragment()).addToBackStack(null).commit();
+        }
     }
 
 }

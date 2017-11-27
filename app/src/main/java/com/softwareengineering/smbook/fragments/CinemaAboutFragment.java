@@ -18,6 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class CinemaAboutFragment extends Fragment {
+    public  static  final String CINEMA_ABOUT_FRAGMENT_BACKSTACK_TAG = "Cinema_about_fragment_backstack_tag";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

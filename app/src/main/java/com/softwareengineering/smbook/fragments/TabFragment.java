@@ -24,7 +24,11 @@ import butterknife.ButterKnife;
  */
 
 public class TabFragment extends Fragment {
+
+    public  static  final String TABFRAGMENT_BACKSTACK_TAG = "tab_fragment_backstack_tag";
     ViewPager viewPager;
+    PagerAdapter adapter = null;
+    TabLayout tabLayout;
     int pos;
 
     @Override
@@ -37,14 +41,17 @@ public class TabFragment extends Fragment {
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
 
-        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
+        tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("MOVIES"));
         tabLayout.addTab(tabLayout.newTab().setText("CINEMAS"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        viewPager = (ViewPager) view.findViewById(R.id.pager);
-        final PagerAdapter adapter = new PagerAdapter
-                (getFragmentManager(), tabLayout.getTabCount());
+        viewPager = view.findViewById(R.id.pager);
+        if(adapter == null){
+            adapter = new PagerAdapter
+                    (getFragmentManager(), tabLayout.getTabCount());
+        }
+
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -86,10 +93,17 @@ public class TabFragment extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
+        if(adapter == null){
+            adapter = new PagerAdapter
+                    (getFragmentManager(), tabLayout.getTabCount());
+        }
 
 
         if(viewPager !=null)
             viewPager.setCurrentItem(PreferenceManager.getDefaultSharedPreferences(getContext()).getInt("Position", 0));
 
     }
+
+
+
 }

@@ -25,6 +25,8 @@ import butterknife.OnClick;
 
 public class MovieScheduleFragment extends Fragment {
 
+    public  static  final String MOVIE_SCHEDULE_FRAGMENT_BACKSTACK_TAG = "Movie_schedule_fragment_backstack_tag";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.movie_schedule_fragment_layout, container, false);
@@ -42,7 +44,7 @@ public class MovieScheduleFragment extends Fragment {
         DateFormat dateFormat = new SimpleDateFormat("dd MMM");
 
         String tomorrowAsString = dateFormat.format(tomorrow);
-        String day_after_tomorrowAsString = dateFormat.format(tomorrow);
+        String day_after_tomorrowAsString = dateFormat.format(day_after_tomorrow);
 
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.dates_tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("TODAY"));

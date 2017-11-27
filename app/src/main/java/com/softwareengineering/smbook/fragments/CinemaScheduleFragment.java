@@ -19,6 +19,8 @@ import butterknife.OnClick;
 
 public class CinemaScheduleFragment extends Fragment {
 
+    public  static  final String CINEMA_SCHEDULE_FRAGMENT_BACKSTACK_TAG = "Cinema_schedule_fragment_backstack_tag";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.cinema_schedule_fragment_layout, container, false);

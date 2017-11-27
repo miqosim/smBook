@@ -19,9 +19,11 @@ import butterknife.OnClick;
 
 public class MovieReviewsFragment extends Fragment {
 
+    public  static  final String MOVIE_REVIEWS_FRAGMENT_BACKSTACK_TAG = "Movie_reviews_fragment_backstack_tag";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.movie_schedule_fragment_layout, container, false);
+        View view = inflater.inflate(R.layout.movie_reviews_fragment_layout, container, false);
         ButterKnife.bind(this, view);
         return view;
     }
