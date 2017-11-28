@@ -102,19 +102,19 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
         holder.movie_about_text_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieAboutFragment()).addToBackStack(null).commit();
+                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieAboutFragment()).addToBackStack(MovieAboutFragment.MOVIE_ABOUT_FRAGMENT_BACKSTACK_TAG).commit();
             }
         });
         holder.movie_reviews_text_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieReviewsFragment()).addToBackStack(null).commit();
+                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieReviewsFragment()).addToBackStack(MovieReviewsFragment.MOVIE_REVIEWS_FRAGMENT_BACKSTACK_TAG).commit();
             }
         });
         holder.movie_schedule_text_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieScheduleFragment()).addToBackStack(null).commit();
+                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieScheduleFragment()).addToBackStack(MovieScheduleFragment.MOVIE_SCHEDULE_FRAGMENT_BACKSTACK_TAG).commit();
             }
         });
 

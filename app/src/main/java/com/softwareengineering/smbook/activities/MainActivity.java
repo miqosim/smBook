@@ -40,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         super.onBackPressed();
-        int index = getSupportFragmentManager().getBackStackEntryCount() - 1;
+        int index = getSupportFragmentManager().getBackStackEntryCount();
         FragmentManager.BackStackEntry backEntry = (FragmentManager.BackStackEntry) getSupportFragmentManager().getBackStackEntryAt(index);
         String tag = backEntry.getName();
 //        Fragment fragment = getFragmentManager().findFragmentByTag(tag);
         if(tag.equals(TabFragment.TABFRAGMENT_BACKSTACK_TAG)) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TabFragment()).addToBackStack(null).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TabFragment()).addToBackStack(TabFragment.TABFRAGMENT_BACKSTACK_TAG).commit();
         }
     }
 

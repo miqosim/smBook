@@ -87,13 +87,13 @@ public class CinemaAdapter extends RecyclerView.Adapter<CinemaAdapter.MyViewHold
         holder.cinema_about_text_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CinemaAboutFragment()).addToBackStack(null).commit();
+                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CinemaAboutFragment()).addToBackStack(CinemaAboutFragment.CINEMA_ABOUT_FRAGMENT_BACKSTACK_TAG).commit();
             }
         });
         holder.cinema_schedule_text_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CinemaScheduleFragment()).addToBackStack(null).commit();
+                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CinemaScheduleFragment()).addToBackStack(CinemaScheduleFragment.CINEMA_SCHEDULE_FRAGMENT_BACKSTACK_TAG).commit();
                 Toast.makeText(App.getContext(), "Cinema Schedule", Toast.LENGTH_LONG).show();
 
             }
