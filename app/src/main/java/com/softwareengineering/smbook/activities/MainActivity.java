@@ -1,8 +1,8 @@
 package com.softwareengineering.smbook.activities;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 //            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 //            transaction.add(R.id.frame, myf);
 //            transaction.commit();
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TabFragment()).addToBackStack(null).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TabFragment()).addToBackStack(TabFragment.TABFRAGMENT_BACKSTACK_TAG).commit();
         }
     }
 
@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         super.onBackPressed();
         int index = getSupportFragmentManager().getBackStackEntryCount();
-        FragmentManager.BackStackEntry backEntry = (FragmentManager.BackStackEntry) getSupportFragmentManager().getBackStackEntryAt(index);
+        FragmentManager.BackStackEntry backEntry = getSupportFragmentManager().getBackStackEntryAt(index-1);
         String tag = backEntry.getName();
-//        Fragment fragment = getFragmentManager().findFragmentByTag(tag);
+
         if(tag.equals(TabFragment.TABFRAGMENT_BACKSTACK_TAG)) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TabFragment()).addToBackStack(TabFragment.TABFRAGMENT_BACKSTACK_TAG).commit();
         }
