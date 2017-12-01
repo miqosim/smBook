@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import com.softwareengineering.smbook.R;
 import com.softwareengineering.smbook.activities.App;
+import com.softwareengineering.smbook.controller.Controller;
+
+import java.sql.SQLException;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -40,5 +43,12 @@ public class MovieAboutFragment extends Fragment {
         Toast.makeText(App.getContext(), "Buy tickets", Toast.LENGTH_LONG).show();
         //TODO: onBackPressed bug, returns TabFragment instead of last in backstack after buy_tickets
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieScheduleFragment()).addToBackStack(MovieScheduleFragment.MOVIE_SCHEDULE_FRAGMENT_BACKSTACK_TAG).commit();
+//        //TODO delete this shit
+        Controller controller = new Controller();
+        try {
+            controller.fillCinemas();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
