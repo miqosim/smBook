@@ -7,4 +7,6 @@
     <string name="armenian">Armenian</string>
     <string name="russian">Russian</string>
     <string name="english">English</string>
+    <string name="user">User</string>
+    <string name="search">Search</string>
 </resources>

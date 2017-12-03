@@ -1,17 +1,14 @@
 package com.softwareengineering.smbook.controller;
 
-import com.softwareengineering.smbook.pojo.Movie;
 import com.softwareengineering.smbook.jdbc.Connect;
 import com.softwareengineering.smbook.pojo.Cinema;
 import com.softwareengineering.smbook.pojo.Hall;
+import com.softwareengineering.smbook.pojo.Movie;
 import com.softwareengineering.smbook.pojo.MovieScreening;
 import com.softwareengineering.smbook.pojo.Seat;
 import com.softwareengineering.smbook.pojo.Ticket;
 import com.softwareengineering.smbook.pojo.User;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Controller {
@@ -20,51 +17,51 @@ public class Controller {
 	
 	private ArrayList<Cinema> cinemas;
 	private ArrayList<Hall> halls;
+	private ArrayList<Movie> movies;
 	private ArrayList<MovieScreening> screening;
 	private ArrayList<Seat> seats;
 	private ArrayList<Ticket> tickets;
 	private ArrayList<User> users;
-	ArrayList<Movie> movies;
 	
 	// Fill Cinemas array data from database
 	
-	public void fillCinemas() throws SQLException{
+	public void fillCinemas() throws Exception{
 		cinemas = Connect.INSTANCE.getCinemaList();
 	}
 	
 	// Fill Hall array data from database
 	
-	public void fillHalls() throws SQLException{
+	public void fillHalls() throws Exception{
 		halls = Connect.INSTANCE.getHallList();
 	}
 	
 	// Fill Movie array data from database
 	
-	public void fillMovies() throws SQLException{
+	public void fillMovies() throws Exception{
 		movies = Connect.INSTANCE.getMovieList();
 	}
 	
 	// Fill Movie Screening array data from database
 	
-	public void fillMovieScreening() throws SQLException{
+	public void fillMovieScreening() throws Exception{
 		screening = Connect.INSTANCE.getScreeningList();
 	}
 	
 	// Fill Seat array data from database
 	
-	public void fillSeatList() throws SQLException{
+	public void fillSeatList() throws Exception{
 		seats = Connect.INSTANCE.getSeatList();
 	}
 	
 	// Fill Tickets array data from database
 	
-	public void fillTicketList() throws SQLException{
+	public void fillTicketList() throws Exception{
 		tickets = Connect.INSTANCE.getTicketsList();
 	}
 	
 	// Fill Users array data from database
 	
-	public void fillTUserist() throws SQLException{
+	public void fillTUserist() throws Exception{
 		users = Connect.INSTANCE.getUserList();
 	}
 	

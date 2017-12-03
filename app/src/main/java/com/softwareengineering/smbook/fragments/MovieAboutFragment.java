@@ -44,11 +44,11 @@ public class MovieAboutFragment extends Fragment {
         //TODO: onBackPressed bug, returns TabFragment instead of last in backstack after buy_tickets
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MovieScheduleFragment()).addToBackStack(MovieScheduleFragment.MOVIE_SCHEDULE_FRAGMENT_BACKSTACK_TAG).commit();
 //        //TODO delete this shit
-        Controller controller = new Controller();
-        try {
-            controller.fillCinemas();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        Controller controller = new Controller();
+//        try {
+//            controller.fillCinemas();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 }
