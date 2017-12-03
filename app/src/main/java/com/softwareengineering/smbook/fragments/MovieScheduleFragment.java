@@ -3,7 +3,12 @@ package com.softwareengineering.smbook.fragments;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -32,6 +37,12 @@ public class MovieScheduleFragment extends Fragment {
         View view = inflater.inflate(R.layout.movie_schedule_fragment_layout, container, false);
         ButterKnife.bind(this, view);
 
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        setHasOptionsMenu(true);
+
         Calendar calendar = Calendar.getInstance();
         Date today = calendar.getTime();
 
@@ -54,9 +65,30 @@ public class MovieScheduleFragment extends Fragment {
         return view;
     }
 
-    @OnClick(R.id.back_arrow_image_view)
-    public void onBackPressed(View view) {
-        Toast.makeText(App.getContext(), "Back", Toast.LENGTH_LONG).show();
-        getActivity().onBackPressed();
+//    @OnClick(R.id.back_arrow_image_view)
+//    public void onBackPressed(View view) {
+//        Toast.makeText(App.getContext(), "Back", Toast.LENGTH_LONG).show();
+//        getActivity().onBackPressed();
+//    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_main, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                Toast.makeText(App.getContext(), "Back", Toast.LENGTH_LONG).show();
+                getActivity().onBackPressed();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

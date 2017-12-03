@@ -1,10 +1,16 @@
 package com.softwareengineering.smbook.activities;
 
+import android.content.ClipData;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.softwareengineering.smbook.R;
 import com.softwareengineering.smbook.fragments.TabFragment;
@@ -21,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
         if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean(IS_FIRST_LAUNCH, true)){
             PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean(IS_FIRST_LAUNCH, false).apply();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new WelcomeScreenFragment()).addToBackStack(null).commit();
