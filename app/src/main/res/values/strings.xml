@@ -9,4 +9,7 @@
     <string name="english">English</string>
     <string name="user">User</string>
     <string name="search">Search</string>
+    <string name="city">City</string>
+    <string name="login">Login</string>
+    <string name="ok">OK</string>
 </resources>

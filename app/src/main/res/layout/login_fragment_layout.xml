@@ -20,17 +20,17 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <LinearLayout
-        android:id="@+id/bar_cinema_schedule"
+        android:id="@+id/bar_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/toolbar">
 
         <TextView
-            android:id="@+id/cinema_name_text_view_about"
+            android:id="@+id/login_text_view"
             android:layout_width="match_parent"
             android:layout_height="24dp"
-            android:text="Cinema Name"
+            android:text="Login"
             android:textAlignment="center"
             />
 

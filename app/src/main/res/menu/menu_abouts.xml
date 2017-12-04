@@ -8,13 +8,7 @@
             android:orderInCategory="200"
             android:icon="@drawable/ic_search_white_24dp"
             app:showAsAction="ifRoom" />
-        <item
-            android:id="@+id/action_city_filter"
-            android:orderInCategory="300"
-            android:title="@string/city"
-            android:icon="@drawable/ic_location_on_white_24dp"
-            app:showAsAction="ifRoom"
-            />
+
         <item
             android:id="@+id/action_login"
             android:orderInCategory="100"

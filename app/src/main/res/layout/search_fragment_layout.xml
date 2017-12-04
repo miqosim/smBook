@@ -20,21 +20,40 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <LinearLayout
-        android:id="@+id/bar_cinema_schedule"
+        android:id="@+id/bar_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/toolbar">
 
-        <TextView
-            android:id="@+id/cinema_name_text_view_about"
+            <EditText
+            android:id="@+id/search_et"
             android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:text="Cinema Name"
-            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:hint="Search"
+                android:layout_weight="1"
+                android:weightSum="6"/>
+
+        <Button
+            android:id="@+id/ok_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ok"
+            android:layout_weight="5"
+            android:weightSum="6"
             />
 
     </LinearLayout>
 
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar_search"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_margin="20dp"/>
 
 </RelativeLayout>
