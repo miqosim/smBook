@@ -14,16 +14,27 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.softwareengineering.smbook.R;
 import com.softwareengineering.smbook.activities.App;
+import com.softwareengineering.smbook.localDbConnection.DbOpenHelper;
+import com.softwareengineering.smbook.pojo.User;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LoginFragment extends Fragment {
     public  static  final String LOGIN_FRAGMENT_BACKSTACK_TAG = "Login_fragment_backstack_tag";
+    @BindView(R.id.user_text_view) TextView user_text_view;
+    @BindView(R.id.user_et) TextView user_et;
+    @BindView(R.id.password_text_view) TextView password_text_view;
+    @BindView(R.id.password_et) TextView password_et;
+    @BindView(R.id.button) TextView button;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,14 +45,23 @@ public class LoginFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
         setHasOptionsMenu(true);
+
+
+
         return view;
     }
 
-//    @OnClick(R.id.back_arrow_image_view)
-//    public void onBackPressed(View view) {
-//        Toast.makeText(App.getContext(), "Back", Toast.LENGTH_LONG).show();
-//        getActivity().onBackPressed();
-//    }
+    @OnClick(R.id.button)
+    public void loginButtonPressed(View view) {
+
+        //TODO: object user, set username and password, pass to DbOpenHelper
+        String username = user_et.getText().toString();
+        String password = password_et.getText().toString();
+        User user = new User(username, password);
+        DbOpenHelper dbOpenHelper = new DbOpenHelper(getActivity());
+        dbOpenHelper.addUserCredentials(user);
+        Toast.makeText(App.getContext(), "Login", Toast.LENGTH_LONG).show();
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

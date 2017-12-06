@@ -82,11 +82,11 @@ public enum Connect {
         while (result.next()) {
             try {
                 User user = new User();
-                user.setBirthday(result.getDate("Date_Of_Birth"));
-                user.setEmail(result.getString("Email"));
-                user.setName(result.getString("Name"));
+//                user.setBirthday(result.getDate("Date_Of_Birth"));
+//                user.setEmail(result.getString("Email"));
+//                user.setName(result.getString("Name"));
                 user.setPassword("Password");
-                user.setSurname(result.getString("Surname"));
+//                user.setSurname(result.getString("Surname"));
                 user.setUserId(result.getInt("UserId"));
                 users.add(user);
             } catch (SQLException ex) {

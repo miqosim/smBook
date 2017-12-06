@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.softwareengineering.smbook.R;
+import com.softwareengineering.smbook.controller.Controller;
 import com.softwareengineering.smbook.fragments.TabFragment;
 import com.softwareengineering.smbook.fragments.WelcomeScreenFragment;
 
@@ -21,6 +22,16 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     public static final String IS_FIRST_LAUNCH = "is_first_launch";
+
+    static {
+        Controller controller = new Controller();
+        try {
+            controller.fillCinemas();
+            controller.getCinemaById(1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

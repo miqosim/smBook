@@ -141,6 +141,7 @@ public class TabFragment extends Fragment {
 
                 Dialog dialog = builder.create();
                 dialog.show();
+                return true;
             case R.id.action_search:
                 Toast.makeText(App.getContext(), "Filtered Search", Toast.LENGTH_LONG).show();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
