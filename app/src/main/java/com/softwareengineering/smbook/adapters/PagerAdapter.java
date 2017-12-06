@@ -1,8 +1,6 @@
 package com.softwareengineering.smbook.adapters;
 
-/**
- * Created by Irina on 11/7/2017.
- */
+
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

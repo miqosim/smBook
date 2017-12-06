@@ -1,4 +1,5 @@
 package com.softwareengineering.smbook.pojo;
+
 public class Hall {
 	
 	//Fields

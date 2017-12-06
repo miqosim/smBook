@@ -18,9 +18,7 @@ import com.softwareengineering.smbook.activities.App;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by Irina on 11/23/2017.
- */
+
 
 public class CinemaScheduleFragment extends Fragment {
 
@@ -38,11 +36,6 @@ public class CinemaScheduleFragment extends Fragment {
         return view;
     }
 
-//    @OnClick(R.id.back_arrow_image_view)
-//    public void onBackPressed(View view) {
-//        Toast.makeText(App.getContext(), "Back", Toast.LENGTH_LONG).show();
-//        getActivity().onBackPressed();
-//    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

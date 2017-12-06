@@ -16,9 +16,6 @@ import com.softwareengineering.smbook.activities.MainActivity;
 
 import java.util.Locale;
 
-/**
- * Created by billy on 11/11/17.
- */
 
 public class WelcomeScreenFragment extends Fragment {
 

@@ -14,4 +14,14 @@
     <string name="ok">OK</string>
     <string name="by_movie_title">By movie title</string>
     <string name="by_director">By director</string>
+    <string name="webpage">Webpage</string>
+    <string name="working_hours">Working hours</string>
+    <string name="tickets_price">Tickets price</string>
+    <string name="address_text">address text</string>
+    <string name="address">Address</string>
+    <string name="cinema_name">Cinema Name</string>
+    <string name="password">Password</string>
+    <string name="movie_name">Movie Name</string>
+    <string name="about">About</string>
+    <string name="buy_tickets">Buy tickets</string>
 </resources>

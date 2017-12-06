@@ -23,9 +23,6 @@ import com.softwareengineering.smbook.pojo.Movie;
 
 import java.util.ArrayList;
 
-/**
- * Created by Irina on 12/6/2017.
- */
 
 public class SearchMovieAdapter extends RecyclerView.Adapter<SearchMovieAdapter.MyViewHolder>{
     private Context mContext;

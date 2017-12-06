@@ -1,8 +1,5 @@
 package com.softwareengineering.smbook.fragments;
 
-/**
- * Created by Irina on 11/23/2017.
- */
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

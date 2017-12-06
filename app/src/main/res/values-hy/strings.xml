@@ -1,2 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">սմԲուկ</string>
+    <string name="action_settings">Կարգավորումներ</string>
+    <string name="about_text">Նկարագրություն</string>
+    <string name="reviews">Կարծիք</string>
+    <string name="schedule">Չվացուցակ</string>
+    <string name="armenian">Հայերեն</string>
+    <string name="russian">Ռուսերեն</string>
+    <string name="english">Անգլերեն</string>
+    <string name="user">Օգտատեր</string>
+    <string name="search">Որոնում</string>
+    <string name="city">Քաղաք</string>
+    <string name="login">Լոգին</string>
+    <string name="ok">Օկ</string>
+    <string name="by_movie_title">Ըստ անվանման</string>
+    <string name="by_director">Ըստ Ռեժիսորի</string>
+    <string name="webpage">Կայք</string>
+    <string name="working_hours">Աշխատաժամեր</string>
+    <string name="tickets_price">Գին</string>
+    <string name="address_text">Հասցե</string>
+    <string name="address">Հասցեрес</string>
+    <string name="cinema_name">Կինոթատրոնի անվանում</string>
+    <string name="password">Пароль</string>
+    <string name="movie_name">Ֆիլմի անվանում</string>
+    <string name="about">Նկարագրություն</string>
+    <string name="buy_tickets">Գնել տոմս</string>
+</resources>

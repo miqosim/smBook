@@ -11,9 +11,6 @@ import com.softwareengineering.smbook.pojo.User;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Mikayel on 12/4/2017.
- */
 
 public class DbOpenHelper extends SQLiteOpenHelper {
 

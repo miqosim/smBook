@@ -38,7 +38,7 @@
         android:id="@+id/cinema_name_text_view_about"
         android:layout_width="match_parent"
         android:layout_height="24dp"
-        android:text="Cinema Name"
+        android:text="@string/cinema_name"
         android:textAlignment="center"
        />
 
@@ -63,21 +63,21 @@
 
     <TextView
         android:id="@+id/cinema_address_text_view_about"
-        android:text="Address"
+        android:text="@string/address"
         android:layout_gravity="left|top"
         android:layout_margin="10dp"
         />
 
     <TextView
         android:id="@+id/cinema_address_text"
-        android:text="address text"
+        android:text="@string/address_text"
         android:layout_gravity="left|top"
         android:layout_margin="10dp"
         />
 
         <TextView
             android:id="@+id/cinema_price_text_view_about"
-            android:text="Tickets price"
+            android:text="@string/tickets_price"
             android:layout_gravity="left|top"
             android:layout_margin="10dp"
             />
@@ -105,7 +105,7 @@
 
         <TextView
             android:id="@+id/cinema_hours_text_view_about"
-            android:text="Working hours"
+            android:text="@string/working_hours"
             android:layout_gravity="left|top"
             android:layout_margin="10dp"
             />
@@ -126,7 +126,7 @@
 
         <Button
             android:id="@+id/cinema_webpage_button"
-            android:text="Webpage"
+            android:text="@string/webpage"
             android:layout_gravity="left|top"
             android:layout_margin="10dp"
             />

@@ -18,9 +18,6 @@ import com.softwareengineering.smbook.activities.App;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by Irina on 11/26/2017.
- */
 
 public class MovieReviewsFragment extends Fragment {
 

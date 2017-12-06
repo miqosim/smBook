@@ -30,9 +30,6 @@ import java.util.Arrays;
 
 import butterknife.ButterKnife;
 
-/**
- * Created by Irina on 11/14/2017.
- */
 
 public class TabFragment extends Fragment {
 

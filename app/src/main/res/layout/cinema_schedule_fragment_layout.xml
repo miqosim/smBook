@@ -30,7 +30,7 @@
             android:id="@+id/cinema_name_text_view_about"
             android:layout_width="match_parent"
             android:layout_height="24dp"
-            android:text="Cinema Name"
+            android:text="@string/cinema_name"
             android:textAlignment="center"
             />
 

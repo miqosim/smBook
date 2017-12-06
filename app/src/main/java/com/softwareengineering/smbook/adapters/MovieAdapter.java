@@ -1,8 +1,5 @@
 package com.softwareengineering.smbook.adapters;
 
-/**
- * Created by Irina on 11/15/2017.
- */
 
 import android.content.Context;
 import android.content.Intent;

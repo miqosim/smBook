@@ -21,9 +21,7 @@ import java.sql.SQLException;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by Irina on 11/26/2017.
- */
+
 
 public class MovieAboutFragment extends Fragment {
 

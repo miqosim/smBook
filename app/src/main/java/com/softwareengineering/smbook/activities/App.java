@@ -3,9 +3,6 @@ package com.softwareengineering.smbook.activities;
 import android.app.Application;
 import android.content.Context;
 
-/**
- * Created by Irina on 11/16/2017.
- */
 
 public class App extends Application {
 

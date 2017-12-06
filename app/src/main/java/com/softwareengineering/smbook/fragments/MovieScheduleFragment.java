@@ -24,9 +24,6 @@ import java.util.Date;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by Irina on 11/26/2017.
- */
 
 public class MovieScheduleFragment extends Fragment {
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">СМБУК</string>
+    <string name="app_name">смБук</string>
     <string name="action_settings">Настройки</string>
     <string name="about_text">Описание</string>
     <string name="reviews">Отзывы</string>
@@ -7,4 +7,21 @@
     <string name="armenian">Армянский</string>
     <string name="russian">Русский</string>
     <string name="english">Английский</string>
+    <string name="user">Юзер</string>
+    <string name="search">Поиск</string>
+    <string name="city">Город</string>
+    <string name="login">Логин</string>
+    <string name="ok">OK</string>
+    <string name="by_movie_title">По названию</string>
+    <string name="by_director">По режиссеру</string>
+    <string name="webpage">сайт</string>
+    <string name="working_hours">Часы работы</string>
+    <string name="tickets_price">Цена билета</string>
+    <string name="address_text">адрес</string>
+    <string name="address">Адрес</string>
+    <string name="cinema_name">Название кинотеатра</string>
+    <string name="password">Пароль</string>
+    <string name="movie_name">Название фильма</string>
+    <string name="about">Описание</string>
+    <string name="buy_tickets">Купить билет</string>
 </resources>
