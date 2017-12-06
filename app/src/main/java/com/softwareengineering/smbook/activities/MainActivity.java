@@ -27,7 +27,10 @@ public class MainActivity extends AppCompatActivity {
         Controller controller = new Controller();
         try {
             controller.fillCinemas();
-            controller.getCinemaById(1);
+            controller.fillMovies();
+            controller.fillHalls();
+            controller.fillMovieScreening();
+            controller.fillTicketList();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -34,14 +34,14 @@
                 android:layout_weight="1"
                 android:weightSum="6"/>
 
-        <Button
-            android:id="@+id/ok_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ok"
-            android:layout_weight="5"
-            android:weightSum="6"
-            />
+        <!--<Button-->
+            <!--android:id="@+id/ok_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/ok"-->
+            <!--android:layout_weight="5"-->
+            <!--android:weightSum="6"-->
+            <!--/>-->
 
     </LinearLayout>
 
@@ -55,5 +55,11 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:layout_margin="20dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_search_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

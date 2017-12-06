@@ -13,13 +13,13 @@ public class Movie {
 		
 	}
 	
-	public Movie(int movieId, String name) {
-		this.movieId = movieId;
+	public Movie(String name) {
+//		this.movieId = movieId;
 		this.name = name;
 	}
 
-	public Movie(int movieId, String name, String director) {
-		this.movieId = movieId;
+	public Movie(String name, String director) {
+//		this.movieId = movieId;
 		this.name = name;
 		this.director = director;
 	}

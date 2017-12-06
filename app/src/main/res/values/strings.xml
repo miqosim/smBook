@@ -12,4 +12,6 @@
     <string name="city">City</string>
     <string name="login">Login</string>
     <string name="ok">OK</string>
+    <string name="by_movie_title">By movie title</string>
+    <string name="by_director">By director</string>
 </resources>
